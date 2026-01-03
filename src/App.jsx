@@ -1,6 +1,6 @@
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
-import NavBar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import { MovieProvider } from "./contexts/MovieContext";
 import Favorites from "./pages/Favorites";
 
