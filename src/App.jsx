@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/Navbar";
 import { MovieProvider } from "./contexts/MovieContext";
+import Favorites from "./pages/Favorites";
 
 function App() {
   return (
