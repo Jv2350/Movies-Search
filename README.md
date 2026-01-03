@@ -1,16 +1,54 @@
-# React + Vite
+# Movie App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small web application to search for movies and save favorites.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This app lets you search for movies and add them to a favorites list for quick access later. It uses a third-party movie API to fetch movie data.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Search movies (title lookup)
+- Add or remove movies from Favorites
+- View a Favorites page
 
-## Expanding the ESLint configuration
+## Requirements
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 16+ or newer
+
+## API
+
+- This project uses The Movie Database (TMDb) API to fetch movie data (endpoints like `/movie/popular` and `/search/movie`).
+- The app reads the API base URL and key from Vite environment variables: `VITE_BASE_URL` and `VITE_API_KEY`.
+
+How to get keys:
+
+- Create a free account at https://www.themoviedb.org and obtain an API key from your account settings.
+
+Environment variables (create a `.env` file in the project root):
+
+```env
+VITE_API_KEY=your_tmdb_api_key_here
+VITE_BASE_URL=https://api.themoviedb.org/3
+```
+
+After adding or changing `.env` values, restart the dev server.
+
+## Install & Run
+
+Install dependencies and start the dev server:
+
+```bash
+npm install
+npm run dev
+```
+
+Open the app at `http://localhost:5173` (Vite default).
+
+## Files of interest
+
+- `index.html` — app title and root element
+- `src/App.jsx` — main app component
+- `src/components` — UI components (MovieCard, NavBar, etc.)
+
+If you want the README to include contribution guidelines, tests, or a production build section, tell me which to add.
