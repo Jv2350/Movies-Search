@@ -3,6 +3,9 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const getPopularMovies = async () => {
   const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
   const data = await response.json();
   return data.results;
 };
@@ -13,6 +16,9 @@ export const searchMovies = async (query) => {
       query
     )}`
   );
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
   const data = await response.json();
   return data.results;
 };
